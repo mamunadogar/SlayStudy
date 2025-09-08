@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - SlayStudy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="SlayStudy Logo" class="logo-image">
+                    <span>SlayStudy</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="notes.html" class="nav-link active">Notes</a>
+                <a href="quizzes.html" class="nav-link">Quizzes</a>
+                <a href="flashcards.html" class="nav-link">Flashcards</a>
+                <a href="pomodoro.html" class="nav-link">Pomodoro</a>
+                <a href="ai-chat.html" class="nav-link">AI Assistant</a>
+                <a href="about.html" class="nav-link">About</a>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="fade-in">Smart Notes Generator 📝</h1>
+                <p class="fade-in">Enter any topic and get comprehensive study notes instantly</p>
+            </div>
+        </section>
+
+        <section class="notes-section">
+            <div class="container">
+                <div class="notes-input-card slide-in">
+                    <h2>What would you like to study?</h2>
+                    <div class="input-group">
+                        <input type="text" id="noteTopic" placeholder="Enter a topic (e.g., Photosynthesis, World War 2, Calculus)">
+                        <button id="generateNotes" class="btn btn-primary">Generate Notes</button>
+                    </div>
+                </div>
+
+                <div id="notesResult" class="notes-result hidden">
+                    <div class="result-header">
+                        <h3>Study Notes</h3>
+                        <button id="downloadNotes" class="btn btn-secondary">Download PDF</button>
+                    </div>
+                    <div id="notesContent" class="notes-content"></div>
+                </div>
+
+                <div id="loadingNotes" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Generating your notes...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SlayStudy</div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="mailto:mamunashahid2004@gmail.com">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SlayStudy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

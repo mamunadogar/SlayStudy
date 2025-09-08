@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - SlayStudy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="SlayStudy Logo" class="logo-image">
+                    <span>SlayStudy</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="notes.html" class="nav-link">Notes</a>
+                <a href="quizzes.html" class="nav-link">Quizzes</a>
+                <a href="flashcards.html" class="nav-link active">Flashcards</a>
+                <a href="pomodoro.html" class="nav-link">Pomodoro</a>
+                <a href="ai-chat.html" class="nav-link">AI Assistant</a>
+                <a href="about.html" class="nav-link">About</a>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="fade-in">Interactive Flashcards 🃏</h1>
+                <p class="fade-in">Master concepts with beautiful, interactive flashcard sessions</p>
+            </div>
+        </section>
+
+        <section class="flashcards-section">
+            <div class="container">
+                <div class="flashcards-controls slide-in">
+                    <div class="deck-selector">
+                        <label for="deckSelect">Choose a deck:</label>
+                        <select id="deckSelect">
+                            <option value="science">Science Basics</option>
+                            <option value="history">World History</option>
+                            <option value="math">Mathematics</option>
+                            <option value="literature">Literature</option>
+                        </select>
+                    </div>
+                    <div class="progress-indicator">
+                        <span id="cardProgress">1 / 10</span>
+                    </div>
+                </div>
+
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="card-content">
+                                    <h3 id="cardQuestion">Click to start studying!</h3>
+                                </div>
+                                <div class="flip-hint">Click to flip</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-content">
+                                    <h3 id="cardAnswer">Answer will appear here</h3>
+                                </div>
+                                <div class="flip-hint">Click to flip back</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-controls">
+                    <button id="prevCard" class="btn btn-secondary">← Previous</button>
+                    <button id="shuffleDeck" class="btn btn-outline">🔀 Shuffle</button>
+                    <button id="nextCard" class="btn btn-primary">Next →</button>
+                </div>
+
+                <div class="study-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Cards Studied</span>
+                        <span class="stat-value" id="cardsStudied">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Deck</span>
+                        <span class="stat-value" id="currentDeck">Science Basics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SlayStudy</div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="mailto:mamunashahid2004@gmail.com">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SlayStudy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
