@@ -1,16 +1,16 @@
+
+// pages/api/chat.js
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const { message } = await req.json();
+    const { message } = req.body; // frontend se message yahan aayega
 
-    // DEBUG: Check if API key is loaded (will print true/false)
-    console.log("OPENAI_API_KEY loaded?", !!process.env.OPENAI_API_KEY);
-
-    if (!process.env.OPENAI_API_KEY) {
-      return res.status(500).json({ error: "API key not found. Did you redeploy?" });
+    if (!message) {
+      return res.status(400).json({ error: "Message is required" });
     }
 
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -25,16 +25,15 @@ export default async function handler(req, res) {
       }),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const errData = await response.json();
-      console.error("OpenAI API error:", errData);
-      return res.status(response.status).json({ error: errData });
+      return res.status(response.status).json({ error: data.error || "OpenAI API Error" });
     }
 
-    const data = await response.json();
     return res.status(200).json(data);
   } catch (error) {
-    console.error("Server error:", error);
-    return res.status(500).json({ error: error.message });
+    console.error("Server Error:", error);
+    return res.status(500).json({ error: "Server error. Please try again later." });
   }
 }
